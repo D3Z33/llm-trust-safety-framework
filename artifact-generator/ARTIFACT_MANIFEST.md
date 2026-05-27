@@ -1,6 +1,6 @@
 # Manifesto de Artefatos
 
-Gerado em: 2026-05-27 11:45:49
+Gerado em: 2026-05-27 12:01:01
 
 | Tipo | Arquivo | Caminho | Status | Observacao | SHA256 |
 |---|---|---|---|---|---|
@@ -61,6 +61,7 @@ Gerado em: 2026-05-27 11:45:49
 | Documento | andrey_roteiro_original.txt | `archive/original_files/andrey_roteiro_original.txt` | OK | Copia preservada do original | `-` |
 | PPTX | llm_trust_apresentacao_final_original.pptx | `archive/original_files/llm_trust_apresentacao_final_original.pptx` | OK | Copia preservada do original | `47137f82d319441937612592edcdf910eb3eaca41a6949003c2fa6ca5c8c2400` |
 | DOCX | llm_trust_original.docx | `archive/original_files/llm_trust_original.docx` | OK | Copia preservada do original | `8d34dea4380cf2162b9c91525b157475bf1a3ae9fb56cff33e23319fe83a18dd` |
+| PDF | LLM_Trust_Safety_Framework_Relatorio_Final.pdf | `archive/original_files/LLM_Trust_Safety_Framework_Relatorio_Final.pdf` | OK | Copia preservada do original | `2a4c94dc08e0708fa4083d7316098975edd1418d934b2166f1ac50aa38bba6a7` |
 | Documento | paulo_roteiro_original.txt | `archive/original_files/paulo_roteiro_original.txt` | OK | Copia preservada do original | `-` |
 | Documento | README.md | `archive/original_files/README.md` | OK | Copia preservada do original | `-` |
 | Documento | renan_roteiro_original.txt | `archive/original_files/renan_roteiro_original.txt` | OK | Copia preservada do original | `-` |

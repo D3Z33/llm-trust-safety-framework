@@ -1,6 +1,6 @@
 # Manifesto de Artefatos
 
-Gerado em: 2026-05-27 11:34:14
+Gerado em: 2026-05-27 11:45:49
 
 | Tipo | Arquivo | Caminho | Status | Observacao | SHA256 |
 |---|---|---|---|---|---|

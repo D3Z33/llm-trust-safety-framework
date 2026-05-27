@@ -1,0 +1,19 @@
+PARTE DO ANDREY — ABERTURA, CONTEXTO E PROBLEMA
+
+Olá, professor Ricardo. Somos o grupo LLM Trust, formado por Andrey Senra Jacinto, Paulo Patrick da Silva, Renan Rocha dos Reis e Renes Vale Moreira.
+
+Neste vídeo, vamos apresentar o projeto LLM Trust & Safety Framework, desenvolvido para a disciplina Cyber Defense Project.
+
+A proposta do projeto é criar uma camada de segurança e governança para aplicações que utilizam modelos de linguagem, como chatbots, assistentes virtuais e sistemas baseados em inteligência artificial generativa.
+
+Hoje, modelos de linguagem estão sendo usados em empresas, escolas, órgãos públicos e sistemas digitais para automatizar tarefas, responder usuários, analisar documentos e apoiar decisões.
+
+Porém, junto com esses benefícios, surgem riscos novos. Um usuário pode enviar dados pessoais sem perceber, pode tentar manipular o comportamento da IA ou pode explorar falhas de segurança por meio de comandos maliciosos.
+
+O problema que buscamos resolver é: como permitir o uso de modelos de linguagem de forma mais segura, auditável e controlada?
+
+Aplicações com IA generativa podem sofrer ataques como prompt injection, jailbreak, vazamento de dados sensíveis e manipulação de contexto.
+
+Por isso, entendemos que apenas usar o modelo de IA não é suficiente. É necessário ter uma camada intermediária que avalie o risco das interações antes, durante e depois da resposta do modelo.
+
+A partir desse problema, estruturamos uma solução baseada em módulos de proteção, pontuação de risco e visualização em dashboard. Agora o Paulo vai explicar a proposta da solução.

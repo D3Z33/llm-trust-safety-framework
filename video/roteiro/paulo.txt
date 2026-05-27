@@ -1,0 +1,25 @@
+PAULO
+
+PARTE DO PAULO — OBJETIVO, SOLUÇÃO E ARQUITETURA
+
+O objetivo geral do projeto é propor uma arquitetura de guardrails para aplicações baseadas em modelos de linguagem.
+
+Essa arquitetura analisa o que o usuário envia, o que o modelo responde e também o comportamento da conversa ao longo da sessão.
+
+Com isso, o sistema consegue identificar riscos, gerar uma pontuação de 0 a 100 e apoiar ações como bloquear, alertar, anonimizar ou registrar eventos para auditoria.
+
+A solução proposta recebeu o nome de LLM Trust & Safety Framework.
+
+Ela funciona como uma camada entre o usuário, a aplicação e o modelo de linguagem.
+
+Antes que o prompt chegue ao modelo, ele passa por uma análise de segurança. Depois que a resposta é gerada, ela também pode ser avaliada antes de ser exibida ao usuário.
+
+Além disso, o framework acompanha a conversa como um todo, porque alguns ataques não acontecem em uma única mensagem, mas em uma sequência de tentativas.
+
+A arquitetura é composta por módulos principais. O InputGuard analisa a entrada do usuário. O OutputGuard verifica a resposta gerada. O SessionWatch observa o histórico da conversa.
+
+Os sinais desses módulos são enviados para o Risk Score, que calcula o nível de risco da interação. Em seguida, os eventos são exibidos em um dashboard, permitindo acompanhamento, registro e apoio à governança.
+
+Essa estrutura não substitui controles tradicionais de segurança, mas complementa esses controles com uma camada específica para riscos envolvendo inteligência artificial generativa.
+
+Com a arquitetura definida, os módulos foram organizados para cobrir entrada, saída, sessão, risco e governança. O Renes vai apresentar de forma resumida esses módulos.

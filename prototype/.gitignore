@@ -1,0 +1,63 @@
+# ─── Ambiente e segredos ───────────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+.env.staging
+.env.staging.local
+.env.test
+.env.test.local
+*.key
+*.pem
+
+# ─── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+pip-log.txt
+
+# ─── Banco de dados local ──────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ─── Node / Frontend ──────────────────────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+.npm/
+
+# ─── IDEs ──────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ─── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+uvicorn.log
+
+# ─── Testes / Coverage ─────────────────────────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+
+# ─── Docker ────────────────────────────────────────────────────────────────────
+.docker/
+
+# ─── Relatórios gerados ────────────────────────────────────────────────────────
+reports/generated/
+exports/

@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=235&color=0:0EA5E9,35:22C55E,70:FACC15,100:EF4444&text=LLM%20Trust%20%26%20Safety%20Framework&fontColor=FFFFFF&fontSize=34&fontAlignY=38&desc=Guardrails%20%7C%20Risk%20Score%20%7C%20Governan%C3%A7a%20para%20aplica%C3%A7%C3%B5es%20com%20LLMs&descAlignY=58&descSize=15&animation=fadeIn" alt="LLM Trust & Safety Framework" />
+<img
+  src="https://capsule-render.vercel.app/api?type=waving&height=235&color=0:0EA5E9,35:22C55E,70:FACC15,100:EF4444&text=LLM%20Trust%20%26%20Safety%20Framework&fontColor=FFFFFF&fontSize=34&fontAlignY=38&desc=Guardrails%20%7C%20Risk%20Score%20%7C%20Governan%C3%A7a%20para%20aplica%C3%A7%C3%B5es%20com%20LLMs&descAlignY=58&descSize=15&animation=fadeIn"
+  alt="LLM Trust & Safety Framework"
+/>
 
 <h1>LLM Trust & Safety Framework</h1>
 
@@ -51,13 +54,24 @@ O framework transforma interações com LLMs em sinais operacionais: risco, cate
 
 ## Painel de Navegação
 
-| Estratégia | Engenharia | Governança | Operação |
+| Trilha | Seção | Use para | Estado |
 |---|---|---|---|
-| [Visão Executiva](#visao-executiva) | [Arquitetura](#arquitetura) | [OWASP LLM Top 10](#owasp-llm-top-10) | [Runbook Local](#runbook-local) |
-| [Por Que Existe](#por-que-existe) | [Módulos](#modulos) | [Governança e Compliance](#governanca-e-compliance) | [Superfície de API](#superficie-de-api) |
-| [Capacidades Centrais](#capacidades-centrais) | [Motor de Risk Score](#motor-de-risk-score) | [Política de Confidencialidade](#politica-de-confidencialidade) | [Cenários de Teste](#cenarios-de-teste) |
-| [Radar de Riscos](#radar-de-riscos) | [Fluxo Técnico](#fluxo-tecnico) | [Quality Gates](#quality-gates) | [Estrutura do Repositório](#estrutura-do-repositorio) |
-| [Matriz de Cobertura](#matriz-de-cobertura) | [Contrato de Decisão](#contrato-de-decisao) | [Roadmap Sumário](#roadmap-sumario) | [Status](#status) |
+| Estratégia | [Visão Executiva](#visao-executiva) | Valor, posicionamento e tese central | Active |
+| Estratégia | [Por Que Existe](#por-que-existe) | Superfícies de ataque em LLMs | Active |
+| Estratégia | [Capacidades Centrais](#capacidades-centrais) | Entregas principais do framework | Active |
+| Risco | [Radar de Riscos](#radar-de-riscos) | Severidade e resposta sugerida | Active |
+| Risco | [Motor de Risk Score](#motor-de-risk-score) | Decisão operacional de 0 a 100 | Active |
+| Risco | [Contrato de Decisão](#contrato-de-decisao) | Entradas, saídas e evidências | Active |
+| Engenharia | [Arquitetura](#arquitetura) | Fluxo de confiança e stack | Active |
+| Engenharia | [Módulos](#modulos) | Componentes de segurança | Active |
+| Engenharia | [Superfície de API](#superficie-de-api) | Endpoints e payloads | Active |
+| Governança | [OWASP LLM Top 10](#owasp-llm-top-10) | Taxonomia de risco | Active |
+| Governança | [Matriz de Cobertura](#matriz-de-cobertura) | Cobertura por categoria | Partial |
+| Governança | [Governança e Compliance](#governanca-e-compliance) | OWASP, NIST, ISO e LGPD | Partial |
+| Operação | [Runbook Local](#runbook-local) | Execução local | Active |
+| Operação | [Cenários de Teste](#cenarios-de-teste) | Prompts de validação | Active |
+| Operação | [Quality Gates](#quality-gates) | Evidências de QA | Active |
+| Evolução | [Roadmap Sumário](#roadmap-sumario) | Próximos passos | Planned |
 
 ---
 
@@ -67,14 +81,22 @@ O framework transforma interações com LLMs em sinais operacionais: risco, cate
 
 | Camada | Papel | Resultado |
 |---|---|---|
-| <img alt="verde" src="https://img.shields.io/badge/Entrada-22C55E?style=flat-square" /> **InputGuard** | Inspeciona prompts antes da execução | Detecta injeção, jailbreak e vazamento de instruções |
-| <img alt="azul" src="https://img.shields.io/badge/Sa%C3%ADda-0EA5E9?style=flat-square" /> **OutputGuard** | Analisa respostas antes da entrega | Reduz exposição de dados e respostas inseguras |
-| <img alt="roxo" src="https://img.shields.io/badge/Sess%C3%A3o-8B5CF6?style=flat-square" /> **SessionWatch** | Observa comportamento multi-turn | Enxerga abuso progressivo e escalada |
-| <img alt="vermelho" src="https://img.shields.io/badge/Score-EF4444?style=flat-square" /> **Risk Score** | Consolida sinais em escala 0-100 | Orienta permitir, alertar, mascarar ou bloquear |
-| <img alt="amarelo" src="https://img.shields.io/badge/Evid%C3%AAncia-FACC15?style=flat-square" /> **Dashboard** | Organiza eventos e indicadores | Apoia auditoria, revisão e apresentação executiva |
-| <img alt="cinza" src="https://img.shields.io/badge/Mapa-14B8A6?style=flat-square" /> **OWASP Mapping** | Liga controles à taxonomia LLM | Mostra cobertura por categoria de risco |
+| **InputGuard** | Inspeciona prompts antes da execução | Detecta injeção, jailbreak e vazamento de instruções |
+| **OutputGuard** | Analisa respostas antes da entrega | Reduz exposição de dados e respostas inseguras |
+| **SessionWatch** | Observa comportamento multi-turn | Enxerga abuso progressivo e escalada |
+| **Risk Score** | Consolida sinais em escala 0-100 | Orienta permitir, alertar, mascarar ou bloquear |
+| **Dashboard** | Organiza eventos e indicadores | Apoia auditoria, revisão e apresentação executiva |
+| **OWASP Mapping** | Liga controles à taxonomia LLM | Mostra cobertura por categoria de risco |
 
-O **LLM Trust & Safety Framework** é uma camada de defesa para aplicações que usam modelos generativos. Ele trabalha em cima daquilo que firewalls, autenticação e validações tradicionais não enxergam sozinhos: intenção no prompt, comportamento da sessão, vazamento na resposta, exposição de dados e rastreabilidade para governança.
+O **LLM Trust & Safety Framework** é uma camada de defesa para aplicações que usam modelos generativos.
+
+Ele trabalha onde firewalls, autenticação e validações tradicionais não chegam sozinhos:
+
+- intenção no prompt;
+- comportamento da sessão;
+- vazamento na resposta;
+- exposição de dados;
+- rastreabilidade para governança.
 
 O foco é simples e forte: **transformar linguagem natural em telemetria de segurança**.
 
@@ -84,15 +106,17 @@ O foco é simples e forte: **transformar linguagem natural em telemetria de segu
 
 ## Por Que Existe
 
-Aplicações com LLMs não são atacadas apenas por código. Elas também são atacadas por instruções, contexto, memória, documentos recuperados, ferramentas conectadas e comportamento do usuário ao longo do tempo.
+Aplicações com LLMs não são atacadas apenas por código.
 
-| Superfície | Exemplo de risco | Camada de controle | Cor |
+Elas também são atacadas por instruções, contexto, memória, documentos recuperados, ferramentas conectadas e comportamento do usuário ao longo do tempo.
+
+| Superfície | Exemplo de risco | Camada de controle | Resposta |
 |---|---|---|---|
-| Prompt | "Ignore as instruções anteriores" | InputGuard | <img alt="verde" src="https://img.shields.io/badge/controle-22C55E?style=flat-square" /> |
-| Resposta | CPF, e-mail, token ou segredo na saída | OutputGuard | <img alt="azul" src="https://img.shields.io/badge/conten%C3%A7%C3%A3o-0EA5E9?style=flat-square" /> |
-| Sessão | Escalada em múltiplas mensagens | SessionWatch | <img alt="roxo" src="https://img.shields.io/badge/correla%C3%A7%C3%A3o-8B5CF6?style=flat-square" /> |
-| Ferramentas | Agente com ação excessiva | Risk Score | <img alt="vermelho" src="https://img.shields.io/badge/decis%C3%A3o-EF4444?style=flat-square" /> |
-| Governança | Ausência de trilha de auditoria | Dashboard | <img alt="amarelo" src="https://img.shields.io/badge/evid%C3%AAncia-FACC15?style=flat-square" /> |
+| Prompt | "Ignore as instruções anteriores" | InputGuard | Controlar entrada |
+| Resposta | CPF, e-mail, token ou segredo na saída | OutputGuard | Conter saída |
+| Sessão | Escalada em múltiplas mensagens | SessionWatch | Correlacionar comportamento |
+| Ferramentas | Agente com ação excessiva | Risk Score | Decidir ação |
+| Governança | Ausência de trilha de auditoria | Dashboard | Preservar evidência |
 
 > [!WARNING]
 > O risco em LLM não mora só na mensagem isolada. Ele pode nascer pequeno, crescer em etapas e só ficar evidente quando entrada, resposta e sessão são avaliadas juntas.
@@ -105,14 +129,14 @@ Aplicações com LLMs não são atacadas apenas por código. Elas também são a
 
 | Capacidade | O que entrega | Estado |
 |---|---|---|
-| **Detecção de Prompt Injection** | Identifica jailbreak, override de instrução e tentativa de extração de prompt | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **Detecção de Dados Sensíveis** | Localiza PII, e-mails, documentos, padrões sensíveis e possíveis segredos | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **Rastreamento de Sessão** | Enxerga acúmulo de risco ao longo da conversa | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **Risk Score 0-100** | Converte sinais técnicos em severidade operacional | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **Mapeamento OWASP** | Relaciona eventos às categorias OWASP LLM Top 10 | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **Dashboard de Auditoria** | Mostra eventos, logs, métricas e cobertura | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **Data Exposure Mirror** | Expõe visualmente o que a conversa está revelando | <img alt="parcial" src="https://img.shields.io/badge/parcial-FACC15?style=flat-square" /> |
-| **Compliance View** | Organiza relação com OWASP, ISO, NIST e LGPD | <img alt="parcial" src="https://img.shields.io/badge/parcial-FACC15?style=flat-square" /> |
+| **Detecção de Prompt Injection** | Identifica jailbreak, override de instrução e tentativa de extração de prompt | Active |
+| **Detecção de Dados Sensíveis** | Localiza PII, e-mails, documentos, padrões sensíveis e possíveis segredos | Active |
+| **Rastreamento de Sessão** | Enxerga acúmulo de risco ao longo da conversa | Active |
+| **Risk Score 0-100** | Converte sinais técnicos em severidade operacional | Active |
+| **Mapeamento OWASP** | Relaciona eventos às categorias OWASP LLM Top 10 | Active |
+| **Dashboard de Auditoria** | Mostra eventos, logs, métricas e cobertura | Active |
+| **Data Exposure Mirror** | Expõe visualmente o que a conversa está revelando | Partial |
+| **Compliance View** | Organiza relação com OWASP, ISO, NIST e LGPD | Partial |
 
 ---
 
@@ -120,12 +144,12 @@ Aplicações com LLMs não são atacadas apenas por código. Elas também são a
 
 ## Radar de Riscos
 
-| Sinal | Leitura | Resposta sugerida |
-|---|---|---|
-| <img alt="baixo" src="https://img.shields.io/badge/baixo-22C55E?style=flat-square" /> Prompt comum | Sem padrão ofensivo relevante | Permitir e registrar |
-| <img alt="médio" src="https://img.shields.io/badge/m%C3%A9dio-FACC15?style=flat-square" /> Prompt suspeito | Linguagem de manipulação, teste de limite ou tentativa indireta | Alertar e acompanhar sessão |
-| <img alt="alto" src="https://img.shields.io/badge/alto-F97316?style=flat-square" /> Dados sensíveis | PII, token, credencial, documento ou e-mail exposto | Mascarar, reduzir contexto e registrar |
-| <img alt="crítico" src="https://img.shields.io/badge/cr%C3%ADtico-EF4444?style=flat-square" /> Jailbreak claro | Override, exfiltração ou pedido de segredo interno | Bloquear e alertar |
+| Nível | Sinal | Leitura | Resposta sugerida |
+|---|---|---|---|
+| Baixo | Prompt comum | Sem padrão ofensivo relevante | Permitir e registrar |
+| Médio | Prompt suspeito | Manipulação, teste de limite ou tentativa indireta | Alertar e acompanhar sessão |
+| Alto | Dados sensíveis | PII, token, credencial, documento ou e-mail exposto | Mascarar, reduzir contexto e registrar |
+| Crítico | Jailbreak claro | Override, exfiltração ou pedido de segredo interno | Bloquear e alertar |
 
 ```mermaid
 flowchart LR
@@ -253,20 +277,22 @@ flowchart TB
 
 ## Módulos
 
-| Módulo | Função | Risco principal | Sinal visual |
+| Módulo | Função | Risco principal | Estado |
 |---|---|---|---|
-| **InputGuard** | Avalia prompts de entrada | Prompt Injection | <img alt="verde" src="https://img.shields.io/badge/entrada-22C55E?style=flat-square" /> |
-| **OutputGuard** | Filtra respostas geradas | Vazamento de dados | <img alt="azul" src="https://img.shields.io/badge/sa%C3%ADda-0EA5E9?style=flat-square" /> |
-| **SessionWatch** | Acompanha comportamento da sessão | Abuso progressivo | <img alt="roxo" src="https://img.shields.io/badge/sess%C3%A3o-8B5CF6?style=flat-square" /> |
-| **Risk Score** | Agrega sinais de risco | Decisão operacional | <img alt="vermelho" src="https://img.shields.io/badge/risco-EF4444?style=flat-square" /> |
-| **Dashboard** | Mostra eventos e métricas | Auditoria | <img alt="amarelo" src="https://img.shields.io/badge/evid%C3%AAncia-FACC15?style=flat-square" /> |
-| **Data Exposure Mirror** | Exibe exposição acumulada | Privacidade | <img alt="rosa" src="https://img.shields.io/badge/privacidade-DB2777?style=flat-square" /> |
-| **OWASP Mapping** | Organiza cobertura por categoria | Governança técnica | <img alt="ciano" src="https://img.shields.io/badge/mapeamento-14B8A6?style=flat-square" /> |
+| **InputGuard** | Avalia prompts de entrada | Prompt Injection | Active |
+| **OutputGuard** | Filtra respostas geradas | Vazamento de dados | Active |
+| **SessionWatch** | Acompanha comportamento da sessão | Abuso progressivo | Active |
+| **Risk Score** | Agrega sinais de risco | Decisão operacional | Active |
+| **Dashboard** | Mostra eventos e métricas | Auditoria | Active |
+| **Data Exposure Mirror** | Exibe exposição acumulada | Privacidade | Partial |
+| **OWASP Mapping** | Organiza cobertura por categoria | Governança técnica | Active |
 
 <details>
 <summary><strong>InputGuard - inspeção antes do modelo</strong></summary>
 
-Camada de leitura de intenção. Ela identifica padrões de jailbreak, tentativa de ignorar instruções, pedido de credenciais, extração de prompt do sistema e linguagem típica de evasão.
+Camada de leitura de intenção.
+
+Identifica padrões de jailbreak, tentativa de ignorar instruções, pedido de credenciais, extração de prompt do sistema e linguagem típica de evasão.
 
 **Sinais tratados**
 
@@ -298,7 +324,9 @@ Camada de resposta. Ela reduz risco de vazamento quando o modelo produz informa�
 <details>
 <summary><strong>SessionWatch - risco que aparece com o tempo</strong></summary>
 
-Nem todo ataque chega pronto. Uma conversa pode começar neutra, testar limites, pedir exceções e só depois tentar exfiltrar informação. O SessionWatch conecta esses pontos.
+Nem todo ataque chega pronto.
+
+Uma conversa pode começar neutra, testar limites, pedir exceções e só depois tentar exfiltrar informação. O SessionWatch conecta esses pontos.
 
 **Estados esperados**
 
@@ -314,7 +342,9 @@ Nem todo ataque chega pronto. Uma conversa pode começar neutra, testar limites,
 <details>
 <summary><strong>Risk Score - decisão visível</strong></summary>
 
-O score reduz ruído. Em vez de mostrar apenas regras disparadas, ele consolida entrada, saída e sessão em uma métrica operacional de 0 a 100.
+O score reduz ruído.
+
+Em vez de mostrar apenas regras disparadas, ele consolida entrada, saída e sessão em uma métrica operacional de 0 a 100.
 
 **Uso prático**
 
@@ -330,7 +360,9 @@ O score reduz ruído. Em vez de mostrar apenas regras disparadas, ele consolida 
 <details>
 <summary><strong>Data Exposure Mirror - privacidade visível</strong></summary>
 
-Mostra o que a interação está revelando: dados pessoais, preferências, rotina, identificadores e sinais que, isolados ou combinados, podem aumentar o risco de exposição.
+Mostra o que a interação está revelando: dados pessoais, preferências, rotina e identificadores.
+
+Também destaca sinais que, isolados ou combinados, podem aumentar o risco de exposição.
 
 </details>
 
@@ -347,12 +379,12 @@ A rota `/owasp` conecta a experiência visual do frontend com dados do backend e
 
 ## Motor de Risk Score
 
-| Faixa | Nível | Ação operacional | Cor |
+| Faixa | Nível | Ação operacional | Tratamento |
 |---:|---|---|---|
-| 0-30 | Baixo | Permitir e registrar | <img alt="baixo" src="https://img.shields.io/badge/baixo-22C55E?style=flat-square" /> |
-| 31-60 | Médio | Permitir com aviso | <img alt="médio" src="https://img.shields.io/badge/m%C3%A9dio-FACC15?style=flat-square" /> |
-| 61-80 | Alto | Revisar, mascarar ou bloquear | <img alt="alto" src="https://img.shields.io/badge/alto-F97316?style=flat-square" /> |
-| 81-100 | Crítico | Bloquear e alertar | <img alt="crítico" src="https://img.shields.io/badge/cr%C3%ADtico-EF4444?style=flat-square" /> |
+| 0-30 | Baixo | Permitir e registrar | Monitorar |
+| 31-60 | Médio | Permitir com aviso | Alertar |
+| 61-80 | Alto | Revisar, mascarar ou bloquear | Conter |
+| 81-100 | Crítico | Bloquear e alertar | Bloquear |
 
 ```mermaid
 flowchart LR
@@ -397,24 +429,26 @@ flowchart LR
 
 ## OWASP LLM Top 10
 
-O mapeamento OWASP atua como linguagem comum entre engenharia, segurança e governança. Ele não substitui revisão técnica; ele organiza os riscos para que a cobertura fique visível.
+O mapeamento OWASP atua como linguagem comum entre engenharia, segurança e governança.
+
+Ele não substitui revisão técnica; organiza os riscos para que a cobertura fique visível.
 
 <a id="matriz-de-cobertura"></a>
 
 ### Matriz de Cobertura
 
-| Categoria OWASP | Cobertura no framework | Estado | Sinal |
-|---|---|---|---|
-| **LLM01 Prompt Injection** | InputGuard, SessionWatch, Risk Score | Ativo | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **LLM02 Sensitive Information Disclosure** | OutputGuard, Data Exposure Mirror | Ativo | <img alt="ativo" src="https://img.shields.io/badge/ativo-22C55E?style=flat-square" /> |
-| **LLM03 Supply Chain** | Documentação, governança e roadmap | Planejado | <img alt="planejado" src="https://img.shields.io/badge/planejado-64748B?style=flat-square" /> |
-| **LLM04 Data and Model Poisoning** | Validação futura de dataset | Planejado | <img alt="planejado" src="https://img.shields.io/badge/planejado-64748B?style=flat-square" /> |
-| **LLM05 Improper Output Handling** | OutputGuard, Risk Score | Parcial | <img alt="parcial" src="https://img.shields.io/badge/parcial-FACC15?style=flat-square" /> |
-| **LLM06 Excessive Agency** | Risk Score e futuro ToolGate | Planejado | <img alt="planejado" src="https://img.shields.io/badge/planejado-64748B?style=flat-square" /> |
-| **LLM07 System Prompt Leakage** | InputGuard, OutputGuard | Parcial | <img alt="parcial" src="https://img.shields.io/badge/parcial-FACC15?style=flat-square" /> |
-| **LLM08 Vector and Embedding Weaknesses** | Roadmap de segurança RAG | Planejado | <img alt="planejado" src="https://img.shields.io/badge/planejado-64748B?style=flat-square" /> |
-| **LLM09 Misinformation** | Roadmap de avaliação e revisão | Planejado | <img alt="planejado" src="https://img.shields.io/badge/planejado-64748B?style=flat-square" /> |
-| **LLM10 Unbounded Consumption** | Rate limit e monitoramento futuro | Parcial | <img alt="parcial" src="https://img.shields.io/badge/parcial-FACC15?style=flat-square" /> |
+| Categoria OWASP | Cobertura no framework | Estado |
+|---|---|---|
+| **LLM01 Prompt Injection** | InputGuard, SessionWatch, Risk Score | Active |
+| **LLM02 Sensitive Information Disclosure** | OutputGuard, Data Exposure Mirror | Active |
+| **LLM03 Supply Chain** | Documentação, governança e roadmap | Planned |
+| **LLM04 Data and Model Poisoning** | Validação futura de dataset | Planned |
+| **LLM05 Improper Output Handling** | OutputGuard, Risk Score | Partial |
+| **LLM06 Excessive Agency** | Risk Score e futuro ToolGate | Planned |
+| **LLM07 System Prompt Leakage** | InputGuard, OutputGuard | Partial |
+| **LLM08 Vector and Embedding Weaknesses** | Roadmap de segurança RAG | Planned |
+| **LLM09 Misinformation** | Roadmap de avaliação e revisão | Planned |
+| **LLM10 Unbounded Consumption** | Rate limit e monitoramento futuro | Partial |
 
 > [!TIP]
 > Acesse `http://127.0.0.1:3001/owasp` para revisar a cobertura visual e `GET /api/owasp/details?days=30` para consultar a visão do backend.
@@ -675,25 +709,25 @@ llm-trust-safety-framework/
 
 Baseado nas validações registradas em [`QA_PROTOTYPE.md`](QA_PROTOTYPE.md):
 
-| Gate | Resultado | Cor |
+| Gate | Resultado | Evidência |
 |---|---|---|
-| Frontend build | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
-| Backend import | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
-| Python compile check | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
-| API health check | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
-| OWASP endpoint | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
-| OWASP frontend route | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
-| Instalação de dependências | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
-| Exportação limpa | Aprovado | <img alt="aprovado" src="https://img.shields.io/badge/aprovado-22C55E?style=flat-square" /> |
+| Frontend build | Approved | Registrado em `QA_PROTOTYPE.md` |
+| Backend import | Approved | Registrado em `QA_PROTOTYPE.md` |
+| Python compile check | Approved | Registrado em `QA_PROTOTYPE.md` |
+| API health check | Approved | HTTP 200 esperado |
+| OWASP endpoint | Approved | `/api/owasp/details` validado |
+| OWASP frontend route | Approved | `/owasp` validado |
+| Instalação de dependências | Approved | Ambiente local validado |
+| Exportação limpa | Approved | Protótipo consolidado |
 
 ### Pontos de Atenção
 
-| Atenção | Tratamento |
+| Ponto | Tratamento |
 |---|---|
-| <img alt="atenção" src="https://img.shields.io/badge/aten%C3%A7%C3%A3o-FACC15?style=flat-square" /> Porta `8000` ocupada em validação local | Runbook usa `8001` |
-| <img alt="atenção" src="https://img.shields.io/badge/aten%C3%A7%C3%A3o-FACC15?style=flat-square" /> Vite exigiu execução elevada no sandbox local | Build validado fora do sandbox |
-| <img alt="atenção" src="https://img.shields.io/badge/aten%C3%A7%C3%A3o-FACC15?style=flat-square" /> Console Windows afetou logs UTF-8 | Backend ajustado para stdout e stderr em UTF-8 |
-| <img alt="atenção" src="https://img.shields.io/badge/aten%C3%A7%C3%A3o-FACC15?style=flat-square" /> Publicação no GitHub | Revisar `.env`, logs e screenshots antes do push |
+| Porta `8000` ocupada em validação local | Runbook usa `8001` |
+| Vite exigiu execução elevada no sandbox local | Build validado fora do sandbox |
+| Console Windows afetou logs UTF-8 | Backend ajustado para stdout e stderr em UTF-8 |
+| Publicação no GitHub | Revisar `.env`, logs e screenshots antes do push |
 
 ---
 
@@ -703,10 +737,10 @@ Baseado nas validações registradas em [`QA_PROTOTYPE.md`](QA_PROTOTYPE.md):
 
 | Fase | Foco | Itens | Estado |
 |---|---|---|---|
-| **01. Foundation** | Base funcional | InputGuard, OutputGuard, Risk Score, Dashboard, OWASP | <img alt="concluído" src="https://img.shields.io/badge/conclu%C3%ADdo-22C55E?style=flat-square" /> |
-| **02. Detection Quality** | Qualidade de detecção | Presidio, dataset maior, falsos positivos, ajuste de sessão | <img alt="próximo" src="https://img.shields.io/badge/pr%C3%B3ximo-FACC15?style=flat-square" /> |
-| **03. Enterprise Readiness** | Operação profissional | Auth hardening, SIEM, relatórios, multi-tenant, pipeline | <img alt="planejado" src="https://img.shields.io/badge/planejado-0EA5E9?style=flat-square" /> |
-| **04. Research Track** | Pesquisa avançada | Classificador semântico, RAG security, tool abuse, adversarial eval | <img alt="exploração" src="https://img.shields.io/badge/explora%C3%A7%C3%A3o-8B5CF6?style=flat-square" /> |
+| **01. Foundation** | Base funcional | InputGuard, OutputGuard, Risk Score, Dashboard, OWASP | Done |
+| **02. Detection Quality** | Qualidade de detecção | Presidio, dataset maior, falsos positivos, ajuste de sessão | Next |
+| **03. Enterprise Readiness** | Operação profissional | Auth hardening, SIEM, relatórios, multi-tenant, pipeline | Planned |
+| **04. Research Track** | Pesquisa avançada | Classificador semântico, RAG security, tool abuse, adversarial eval | Exploration |
 
 ### Sumário Evolutivo
 
@@ -806,13 +840,17 @@ flowchart LR
 | Dados sensíveis | Não incluídos |
 
 > [!NOTE]
-> Este repositório representa uma base técnica em evolução. Uso em ambiente produtivo exige revisão de segurança, validação de dataset, observabilidade, gestão de segredos, testes adicionais e controles operacionais.
+> Este repositório representa uma base técnica em evolução.
+> Uso em ambiente produtivo exige revisão de segurança, validação de dataset, observabilidade, gestão de segredos, testes adicionais e controles operacionais.
 
 ---
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:EF4444,35:FACC15,70:22C55E,100:0EA5E9" alt="footer" />
+<img
+  src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:EF4444,35:FACC15,70:22C55E,100:0EA5E9"
+  alt="footer"
+/>
 
 <strong>LLM Trust & Safety Framework</strong>
 
